@@ -327,7 +327,7 @@
     for(let i =0, n = character_links.length; i < n; i++) {
       let character_link = character_links[i];
       character_link.addEventListener('click', function (event) {
-        char_target = character_link.getAttribute('data-href');
+        var char_target = character_link.getAttribute('data-href');
         event.preventDefault();
         reader.display(char_target);
       }); 
@@ -338,7 +338,7 @@
     for(let i =0, n = notes_links.length; i < n; i++) {
       let notes_link = notes_links[i];
       notes_link.addEventListener('click', function (event) {
-        note_target = notes_link.getAttribute('data-href');
+        var note_target = notes_link.getAttribute('data-href');
         event.preventDefault();
         reader.display(note_target);
       });
@@ -349,7 +349,7 @@
     for(let i =0, n = translator_links.length; i < n; i++) {
       let translator_link = translator_links[i];
       translator_link.addEventListener('click', function (event) {
-        translator_target = translator_link.getAttribute('data-href');
+        var translator_target = translator_link.getAttribute('data-href');
         event.preventDefault();
         reader.display(translator_target);
       });
