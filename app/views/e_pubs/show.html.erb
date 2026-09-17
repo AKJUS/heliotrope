@@ -103,7 +103,7 @@
     <script type="text/javascript">
         <% if !@princesse_de_cleves && @parent_presenter.use_hypothesis? %>
         // hypothes.is integration
-        AnnotationTool = cozy.Control.Widget.Toggle.extend({
+        var AnnotationTool = cozy.Control.Widget.Toggle.extend({
           defaultTemplate: '<button data-hypothesis-trigger class="button--sm annotation" data-toggle="button" aria-label="Open Annotations"><i class="fa fa-pencil" title="Open annotation panel" aria-hidden="true"></i></button><div class="annotation-count" data-hypothesis-annotation-count></div>',
 
 

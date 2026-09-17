@@ -46,9 +46,9 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
 
-      webgl_epub_noid_position = -1;
-      webgl_epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
-      webgl_epub_noids_a11y_on = localStorage.getItem("webgl_epub_noids_a11y_on");
+      var webgl_epub_noid_position = -1;
+      var webgl_epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
+      var webgl_epub_noids_a11y_on = localStorage.getItem("webgl_epub_noids_a11y_on");
       if(webgl_epub_noids_a11y_on !== null) {
         webgl_epub_noids_a11y_on = JSON.parse(webgl_epub_noids_a11y_on);
         webgl_epub_noid_position = webgl_epub_noids_a11y_on.indexOf(webgl_epub_noid);
@@ -74,7 +74,7 @@
 
         <% if @parent_presenter.use_hypothesis? %>
           // Create custom annotator button that is aware of its state
-          AnnotationTool = cozy.Control.Widget.Toggle.extend({
+          var AnnotationTool = cozy.Control.Widget.Toggle.extend({
             defaultTemplate: '<button data-hypothesis-trigger class="button--sm annotation" data-toggle="button" aria-label="Open Annotations"><i class="fa fa-pencil" title="Open annotation panel" aria-hidden="true"></i></button><div class="annotation-count" data-hypothesis-annotation-count></div>',
 
 

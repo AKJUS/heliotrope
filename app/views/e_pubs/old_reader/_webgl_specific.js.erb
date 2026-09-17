@@ -74,8 +74,8 @@ var open_panel = function() {
 
     // the game has to have a specific aspect ratio or it looks distorted
     var r = w / 1024;
-    game_width = w + 'px';
-    game_height = Math.ceil(600 * r) + 'px';
+    var game_width = w + 'px';
+    var game_height = Math.ceil(600 * r) + 'px';
 
     if (!gameInstance) {
       var container = document.querySelector("#unity-container");
@@ -327,8 +327,8 @@ var a11y_on = function() {
 
   // the storing of `webgl_epub_noids_a11y_on` will happen for both deliberate a11y_mode choice and for...
   // incompatible browsers, so subsequent loads with an incompatible browser will also have the panel closed
-  epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
-  a11y_on_noids = localStorage.getItem("webgl_epub_noids_a11y_on");
+  var epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
+  var a11y_on_noids = localStorage.getItem("webgl_epub_noids_a11y_on");
   if(a11y_on_noids === null) {
     localStorage.setItem("webgl_epub_noids_a11y_on", JSON.stringify([epub_noid]));
   } else {
@@ -346,11 +346,11 @@ var a11y_off = function() {
   $('#webgl').attr('aria-disabled', 'false');
   $('#webgl').prop('disabled', false);
 
-  epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
-  a11y_on_noids = localStorage.getItem("webgl_epub_noids_a11y_on");
+  var epub_noid = <%= "\"#{@presenter.id}\"".html_safe %>;
+  var a11y_on_noids = localStorage.getItem("webgl_epub_noids_a11y_on");
   if(a11y_on_noids !== null) {
     a11y_on_noids = JSON.parse(a11y_on_noids);
-    position = a11y_on_noids.indexOf(epub_noid);
+    var position = a11y_on_noids.indexOf(epub_noid);
     if (position !== -1) {
       a11y_on_noids.splice(position, 1);
       if(a11y_on_noids.length == 0) {
